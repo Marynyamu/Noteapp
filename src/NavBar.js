@@ -14,7 +14,7 @@ function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About Us</Link>
+          <a href="#about-section">About Us</a> {/* Updated to use anchor tag */}
         </li>
         <li>
           <Link to="/contact">Contact Us</Link>
@@ -25,4 +25,3 @@ function NavBar() {
 }
 
 export default NavBar;
-

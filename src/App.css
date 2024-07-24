@@ -1,4 +1,7 @@
 /* App.css */
+html {
+  scroll-behavior: smooth;
+}
 .nav-link {
   text-decoration: none;
   color: inherit;

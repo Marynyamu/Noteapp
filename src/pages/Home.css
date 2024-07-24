@@ -84,6 +84,10 @@
   max-width: 40%; /* Adjust as needed */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .info-image img {
   width: 100%;
   height: auto;
