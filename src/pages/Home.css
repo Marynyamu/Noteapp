@@ -1,0 +1,103 @@
+.home {
+  position: relative;
+  padding-top: 56px; /* Height of the navigation bar */
+  text-align: center;
+  margin-top: -56px; /* Offset the top padding to remove space */
+}
+
+.carousel {
+  width: 100%;
+  height: calc(100vh - 56px); /* Adjust to ensure the carousel covers the remaining viewport height minus nav height */
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100%; /* Ensure carousel items fill the entire height */
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  padding: 20px;
+}
+
+.text-container {
+  max-width: 50%;
+}
+
+.text-content {
+  color: white;
+  text-align: left; /* Align text to the left */
+}
+
+.text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  margin-top: 20px; /* Adjust spacing between text and button */
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  margin-top: 2rem; /* Adjust spacing from carousel */
+  padding: 2rem; /* Add padding for spacing */
+}
+
+.info-text {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.info-container {
+  margin-bottom: 2rem; /* Add spacing between sections */
+}
+
+.info-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.info-image {
+  flex: 1;
+  max-width: 40%; /* Adjust as needed */
+}
+
+.info-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: Add border radius for styling */
+}
+
+.footer {
+  background-color: gray;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
