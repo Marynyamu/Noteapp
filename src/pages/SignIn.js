@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './SignIn.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -8,15 +9,21 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your sign-in logic here
-    // After successful sign-in, navigate to the dashboard
-    navigate('/dashboard');
+    // Simulate successful sign-in logic
+    const isSignInSuccessful = true; // Replace with actual sign-in logic
+
+    if (isSignInSuccessful) {
+      navigate('/dashboard');
+    } else {
+      // Handle sign-in failure (optional)
+      alert('Sign-in failed. Please check your credentials.');
+    }
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="signin-container">
+      <form className="signin-form" onSubmit={handleSubmit}>
+        <h2>Sign In</h2>
         <div>
           <label>Email:</label>
           <input

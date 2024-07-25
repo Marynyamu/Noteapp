@@ -1,39 +1,42 @@
 .nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0.5rem;
-    background-color: #f8f9fa;
-  }
-  
-  .nav-logo {
-    margin-right: 2rem;
-    height: 4rem;
-     /* Move the logo to the left */
-  }
-  
-  .nav-title {
-    margin-right: 45rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    padding-top: 0.5rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-  }
-  
-  .nav-links a:hover {
-    color: pink;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure the nav stays on top of other elements */
+}
+
+.nav-logo {
+  height: 4rem;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  padding: 0.5rem;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
   
 
 

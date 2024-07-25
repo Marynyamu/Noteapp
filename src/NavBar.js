@@ -1,8 +1,7 @@
-// src/components/NavBar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import logo from './assets/logo.png';
+import logo from './assets/logo.png'; // Adjusted path to assets folder
 
 function NavBar() {
   return (
@@ -14,7 +13,7 @@ function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#about-section">About Us</a> {/* Updated to use anchor tag */}
+          <a href="#about-section">About Us</a>
         </li>
         <li>
           <Link to="/contact">Contact Us</Link>
@@ -25,3 +24,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

@@ -14,8 +14,20 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="home">
       <Carousel>
+        <Carousel.Item>
+          <img className="d-block w-100" src={image1} alt="First slide" />
+          <Carousel.Caption className="carousel-caption">
+            <div className="text-container">
+              <div className="text-content">
+                <h1>Welcome to Our Website</h1>
+                <p>This is a brief introduction about the website. Here you can add some more descriptive text or any other content you'd like to display on the Home page.</p>
+                <Button variant="primary" onClick={handleSignInClick}>Sign In</Button>
+              </div>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={image2} alt="Second slide" />
           <Carousel.Caption className="carousel-caption">
@@ -28,9 +40,21 @@ const Home = () => {
             </div>
           </Carousel.Caption>
         </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={image3} alt="Third slide" />
+          <Carousel.Caption className="carousel-caption">
+            <div className="text-container">
+              <div className="text-content">
+                <h1>Welcome to Our Website</h1>
+                <p>This is a brief introduction about the website. Here you can add some more descriptive text or any other content you'd like to display on the Home page.</p>
+                <Button variant="primary" onClick={handleSignInClick}>Sign In</Button>
+              </div>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
       </Carousel>
       <div className="additional-info">
-        <div id="about-section" className="info-text"> {/* Added id here */}
+        <div id="about-section" className="info-text">
           <div className="info-container">
             <h2>About Our Organization</h2>
             <p>Here you can provide more information about your organization, its mission, values, achievements, etc.</p>
@@ -51,7 +75,10 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;
+
+
 
 
 
