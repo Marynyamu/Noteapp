@@ -1,85 +1,109 @@
-import React, { useState, useEffect } from 'react';
-import './Dashboard.css';
+import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+import { saveAs } from 'file-saver';
+import { Document, Packer, Paragraph, TextRun } from 'docx';
+import './Dashboard.css'; // Ensure to include your CSS styles
 
 const Dashboard = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [notes, setNotes] = useState([]);
+  const [noteTitle, setNoteTitle] = useState('');
+  const [noteContent, setNoteContent] = useState('');
 
-  useEffect(() => {
-    const storedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-    setNotes(storedNotes);
-  }, []);
+  const handleSaveAsDocx = () => {
+    // Create a document with the title and content
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: noteTitle,
+                  bold: true,
+                  size: 32, // Adjust size as needed
+                }),
+              ],
+              heading: 'Heading1', // You can use different headings if needed
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: noteContent,
+                  size: 24, // Adjust size as needed
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
 
-  const saveNotesToLocalStorage = (notes) => {
-    localStorage.setItem('notes', JSON.stringify(notes));
+    Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, `${noteTitle || 'untitled'}.docx`);
+    });
   };
 
-  const handleAddNote = () => {
-    if (title && content) {
-      const newNote = { id: Date.now(), title, content };
-      const updatedNotes = [...notes, newNote];
-      setNotes(updatedNotes);
-      setTitle('');
-      setContent('');
-      saveNotesToLocalStorage(updatedNotes);
-    }
-  };
-
-  const handleDeleteNote = (id) => {
-    const updatedNotes = notes.filter(note => note.id !== id);
-    setNotes(updatedNotes);
-    saveNotesToLocalStorage(updatedNotes);
-  };
-
-  const handleDownloadNote = (note) => {
-    const element = document.createElement('a');
-    const file = new Blob([note.content], { type: 'text/plain' });
-    element.href = URL.createObjectURL(file);
-    element.download = `${note.title}.txt`;
-    document.body.appendChild(element);
-    element.click();
+  const handleClear = () => {
+    setNoteTitle('');
+    setNoteContent('');
   };
 
   return (
-    <div className="dashboard-container">
-      <h2>Dashboard</h2>
-      <p>Welcome to the dashboard!</p>
-      <p>Hello Mary</p>
-      <div className="note-taking">
-        <h3>Notes</h3>
-        <div className="note-form">
-          <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <textarea
-            placeholder="Content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          ></textarea>
-          <button onClick={handleAddNote}>Add Note</button>
+    <div className="dashboard">
+      <div className="note-taking-area">
+        <input
+          type="text"
+          placeholder="Note Title"
+          value={noteTitle}
+          onChange={(e) => setNoteTitle(e.target.value)}
+          className="note-title-input"
+        />
+        <ReactQuill
+          value={noteContent}
+          onChange={setNoteContent}
+          placeholder="Write your note here..."
+          className="note-editor"
+        />
+        <div className="note-actions">
+          <button onClick={handleSaveAsDocx}>Save as .docx</button>
+          <button onClick={handleClear}>Clear Note</button>
         </div>
-        <div className="notes-list">
-          {notes.map(note => (
-            <div key={note.id} className="note-card">
-              <div className="note-header">
-                <h4>{note.title}</h4>
-                <button onClick={() => handleDeleteNote(note.id)}>Delete</button>
-                <button onClick={() => handleDownloadNote(note)}>Download</button>
-              </div>
-              <p>{note.content}</p>
-            </div>
-          ))}
-        </div>
+      </div>
+      <div className="notes-list">
+        {/* Display list of notes if applicable */}
       </div>
     </div>
   );
 };
 
 export default Dashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
