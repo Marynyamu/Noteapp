@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import Quill styles
 import { saveAs } from 'file-saver';
-import { Document, Packer, Paragraph, TextRun } from 'docx';
+import htmlDocx from 'html-docx-js/dist/html-docx';
 import './Dashboard.css'; // Ensure to include your CSS styles
 
 const Dashboard = () => {
@@ -10,38 +10,12 @@ const Dashboard = () => {
   const [noteContent, setNoteContent] = useState('');
 
   const handleSaveAsDocx = () => {
-    // Create a document with the title and content
-    const doc = new Document({
-      sections: [
-        {
-          properties: {},
-          children: [
-            new Paragraph({
-              children: [
-                new TextRun({
-                  text: noteTitle,
-                  bold: true,
-                  size: 32, // Adjust size as needed
-                }),
-              ],
-              heading: 'Heading1', // You can use different headings if needed
-            }),
-            new Paragraph({
-              children: [
-                new TextRun({
-                  text: noteContent,
-                  size: 24, // Adjust size as needed
-                }),
-              ],
-            }),
-          ],
-        },
-      ],
-    });
-
-    Packer.toBlob(doc).then((blob) => {
-      saveAs(blob, `${noteTitle || 'untitled'}.docx`);
-    });
+    const htmlContent = `
+      <h1>${noteTitle}</h1>
+      ${noteContent}
+    `;
+    const converted = htmlDocx.asBlob(htmlContent);
+    saveAs(converted, `${noteTitle || 'untitled'}.docx`);
   };
 
   const handleClear = () => {
@@ -78,6 +52,12 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
+
+
 
 
 
