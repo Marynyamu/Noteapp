@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Notepad/static/css/main.1bf1a451.chunk.css",
-    "main.js": "/Notepad/static/js/main.b74b23ce.chunk.js",
-    "main.js.map": "/Notepad/static/js/main.b74b23ce.chunk.js.map",
-    "runtime~main.js": "/Notepad/static/js/runtime~main.159f2d89.js",
-    "runtime~main.js.map": "/Notepad/static/js/runtime~main.159f2d89.js.map",
-    "static/css/2.bc321f81.chunk.css": "/Notepad/static/css/2.bc321f81.chunk.css",
-    "static/js/2.feed751e.chunk.js": "/Notepad/static/js/2.feed751e.chunk.js",
-    "static/js/2.feed751e.chunk.js.map": "/Notepad/static/js/2.feed751e.chunk.js.map",
-    "index.html": "/Notepad/index.html",
-    "precache-manifest.d9e066e5047c155656428c776ed8c57e.js": "/Notepad/precache-manifest.d9e066e5047c155656428c776ed8c57e.js",
-    "service-worker.js": "/Notepad/service-worker.js",
-    "static/css/2.bc321f81.chunk.css.map": "/Notepad/static/css/2.bc321f81.chunk.css.map",
-    "static/css/main.1bf1a451.chunk.css.map": "/Notepad/static/css/main.1bf1a451.chunk.css.map",
-    "static/media/image1.jpg": "/Notepad/static/media/image1.fd42b429.jpg",
-    "static/media/image2.jpg": "/Notepad/static/media/image2.dbd733a1.jpg",
-    "static/media/image3.jpg": "/Notepad/static/media/image3.c2dce8c4.jpg",
-    "static/media/logo.png": "/Notepad/static/media/logo.48c6d7e7.png"
+    "main.css": "/Noteapp/static/css/main.1bf1a451.chunk.css",
+    "main.js": "/Noteapp/static/js/main.b74b23ce.chunk.js",
+    "main.js.map": "/Noteapp/static/js/main.b74b23ce.chunk.js.map",
+    "runtime~main.js": "/Noteapp/static/js/runtime~main.3e4c2363.js",
+    "runtime~main.js.map": "/Noteapp/static/js/runtime~main.3e4c2363.js.map",
+    "static/css/2.bc321f81.chunk.css": "/Noteapp/static/css/2.bc321f81.chunk.css",
+    "static/js/2.feed751e.chunk.js": "/Noteapp/static/js/2.feed751e.chunk.js",
+    "static/js/2.feed751e.chunk.js.map": "/Noteapp/static/js/2.feed751e.chunk.js.map",
+    "index.html": "/Noteapp/index.html",
+    "precache-manifest.03340ce1fc8ab539f572ff217a78269b.js": "/Noteapp/precache-manifest.03340ce1fc8ab539f572ff217a78269b.js",
+    "service-worker.js": "/Noteapp/service-worker.js",
+    "static/css/2.bc321f81.chunk.css.map": "/Noteapp/static/css/2.bc321f81.chunk.css.map",
+    "static/css/main.1bf1a451.chunk.css.map": "/Noteapp/static/css/main.1bf1a451.chunk.css.map",
+    "static/media/image1.jpg": "/Noteapp/static/media/image1.fd42b429.jpg",
+    "static/media/image2.jpg": "/Noteapp/static/media/image2.dbd733a1.jpg",
+    "static/media/image3.jpg": "/Noteapp/static/media/image3.c2dce8c4.jpg",
+    "static/media/logo.png": "/Noteapp/static/media/logo.48c6d7e7.png"
   }
 }
